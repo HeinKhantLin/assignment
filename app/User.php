@@ -41,6 +41,10 @@ class User extends Authenticatable
         return $this->hasMany(Cart::class,'customer_id');
     }
 
+    public function transactions(){
+        return $this->hasOne(Transaction::class,'customer_id');
+    }
+
     public function getActiveCartAttribute(){
         return $this->carts->where('completed_at',null)->first();
     }

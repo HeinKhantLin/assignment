@@ -28,5 +28,9 @@ Route::middleware('cart.check')->group(function(){
     Route::get('shopping-cart','CartController@show');
 
     Route::resource('cart-item','CartItemController')->only(['store','update','destroy']);
+
+    Route::resource('checkout','CheckOutController')->only(['store']);
+
+    Route::get('success','SuccessController@index');
 });
 

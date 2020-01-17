@@ -1,5 +1,6 @@
 <template>
     <form class="col-1 border mt-3" :action="action_url" method="POST" >
+        <slot></slot>
         <div class="form-group mt-3">
             <label for="coupon">Coupon Code</label>
             <input type="text" 
@@ -26,7 +27,7 @@
 
 <script>
     export default {
-        props: ['total_price', 'action_url'],
+        props: ['total_price', 'action_url', 'items'],
 
         data() {
             return{

@@ -20,7 +20,8 @@
 
     <checkout-form
         total_price="{{ $current_cart->cart_total_price }}"
-        action_url="">
+        action_url="{{ route('checkout.store')}}"
+    >
     @csrf
     </checkout-form>
     
